@@ -1,27 +1,31 @@
 from mpl_toolkits.mplot3d import axes3d
 import matplotlib.pyplot as plt
+import numpy as np
+import csv
 
 fig = plt.figure()
+
 ax1 = fig.add_subplot(111, projection='3d')
 
 x=[]
 y=[]
 z=[]
 
-with open("x") as file:
-    for i in range(0, 100):
-        str = file.readline()
-        x.append(float(str))
+with open('stars/x', 'r') as file:
+    cord = csv.reader(file)
+    for row in cord:
+        x.append(float(row[0]))
 file.close()
-with open("y") as file:
-    for i in range(0, 100):
-        str = file.readline()
-        y.append(float(str))
+with open('stars/y', 'r') as file:
+    cord = csv.reader(file)
+    for row in cord:
+        y.append(float(row[0]))
 file.close()
-with open("z") as file:
-    for i in range(0, 100):
-        str = file.readline()
-        z.append(float(str))
+with open('stars/z', 'r') as file:
+    cord = csv.reader(file)
+    for row in cord:
+        z.append(float(row[0]))
 file.close()
+print(len(x), len(y), len(z))
 ax1.scatter(x, y, z)
 plt.show()
