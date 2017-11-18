@@ -27,5 +27,6 @@ with open('stars/z', 'r') as file:
         z.append(float(row[0]))
 file.close()
 print(len(x), len(y), len(z))
+ax1.text(x[0], y[0], z[0], 'Sun')
 ax1.scatter(x, y, z)
 plt.show()
