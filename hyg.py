@@ -11,20 +11,15 @@ x=[]
 y=[]
 z=[]
 
-with open('stars/x', 'r') as file:
+with open('HYG-Database/hygdata_v3.csv', 'r') as file:
     cord = csv.reader(file)
+    i=0
     for row in cord:
-        x.append(float(row[0]))
-file.close()
-with open('stars/y', 'r') as file:
-    cord = csv.reader(file)
-    for row in cord:
-        y.append(float(row[0]))
-file.close()
-with open('stars/z', 'r') as file:
-    cord = csv.reader(file)
-    for row in cord:
-        z.append(float(row[0]))
+        if not i==0 and i%1000==0:
+            x.append(float(row[17]))
+            y.append(float(row[18]))
+            z.append(float(row[19]))
+        i+=1
 file.close()
 print(len(x), len(y), len(z))
 ax1.text(x[0], y[0], z[0], 'Sun')
