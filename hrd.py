@@ -11,12 +11,11 @@ with open('HYG-Database/hygdata_v3.csv', 'r') as file:
         if i==1:
             print(row[33])
         if not i==0 and float(row[33])<10000 and float(row[33])>0.0001:
-            if not row[16] == '':
+            if not row[16] == '': #If its empty, skip it
                 lum.append(float(row[33]))
                 ci.append(float(row[16]))
         i+=1
 file.close()
-
 plt.scatter(ci, lum, s=1)
 plt.annotate('Sun', xy=(ci[0], lum[0]))
 print(lum[0])
