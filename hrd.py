@@ -15,7 +15,7 @@ with open('HYG-Database/hygdata_v3.csv', 'r') as file:
                 stars_abs_mag.append(float(row[14]))
                 stars_color_index.append(float(row[16]))
                 stars += 1
-                print stars
+                print ('Progress: {}%'.format(counter*100/119575))
         counter += 1
 file.close()
 
