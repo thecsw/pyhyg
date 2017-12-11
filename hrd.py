@@ -2,8 +2,16 @@ import matplotlib.pyplot as plt
 import csv
 import math
 
+ax = plt.gca()
+ax.set_facecolor('black')
+
 stars_abs_mag = []
 stars_color_index = []
+
+def save_figure(cname, cdpi):
+    plt.savefig('{}.png'.format(cname), dpi=cdpi, format = 'png')
+    plt.savefig('{}.svg'.format(cname), dpi=cdpi, format = 'svg')
+
 with open('HYG-Database/hygdata_v3.csv', 'r') as file:
     cord = csv.reader(file)
     counter = 0
@@ -19,7 +27,7 @@ with open('HYG-Database/hygdata_v3.csv', 'r') as file:
         counter += 1
 file.close()
 
-plt.scatter(stars_color_index, stars_abs_mag, s = 0.5)
+plt.scatter(stars_color_index, stars_abs_mag, s = 0.3, c = 'w')
 plt.annotate('Sun', xy = (stars_color_index[0], stars_abs_mag[0]))
 
 print ("Our sun: Absolute magnitude : {}\n\
@@ -29,4 +37,5 @@ plt.xlim([-0.5, 2])
 plt.xlabel('Color index')
 plt.ylabel('Absolute magnitude')
 plt.title('Hertzprung-Russel diagram')
-plt.show()
+save_figure('HRD', 2500)
+#plt.show()
