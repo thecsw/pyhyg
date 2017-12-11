@@ -48,8 +48,9 @@ plt.scatter(stars_color_index, stars_abs_mag, s = 0.3, c = 'w')
 
 plt.annotate('Sun', xy = (stars_color_index[0], stars_abs_mag[0]))
 
-print ("Our sun: Absolute magnitude : {}\n\
-Color index : {}".format(stars_abs_mag[0], stars_color_index[0]))
+print ("\nOur sun: \n\
+\tAbsolute magnitude : {}\n\
+\tColor index : {}\n".format(stars_abs_mag[0], stars_color_index[0]))
 
 plt.ylim([15, -10])
 plt.xlim([-0.5, 2])
