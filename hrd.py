@@ -1,17 +1,29 @@
 import matplotlib.pyplot as plt
 import csv
 import math
-from progressbar import ProgressBar, Percentage, Bar 
+from progressbar import ProgressBar, Percentage, Bar, AnimatedMarker 
+import thread
+import time
 amount = 119575
 ax = plt.gca()
 ax.set_facecolor('black')
 stars_abs_mag = []
 stars_color_index = []
+work = True
+pbar = ProgressBar(widgets=['Working: ', AnimatedMarker()])
 
 def save_figure(cname, cdpi):
     plt.savefig('{}.png'.format(cname), dpi=cdpi, format = 'png')
     plt.savefig('{}.svg'.format(cname), dpi=cdpi, format = 'svg')
 
+def working_bar():
+    global pbar
+    i=0
+    for i in pbar((i for i in range(150))):
+        time.sleep(.08)
+        if work == False:
+            return
+    
 with open('HYG-Database/hygdata_v3.csv', 'r') as file:
     cord = csv.reader(file)
     counter = 0
@@ -32,14 +44,21 @@ with open('HYG-Database/hygdata_v3.csv', 'r') as file:
 file.close()
 
 plt.scatter(stars_color_index, stars_abs_mag, s = 0.3, c = 'w')
+
 plt.annotate('Sun', xy = (stars_color_index[0], stars_abs_mag[0]))
 
 print ("Our sun: Absolute magnitude : {}\n\
 Color index : {}".format(stars_abs_mag[0], stars_color_index[0]))
+
 plt.ylim([15, -10])
 plt.xlim([-0.5, 2])
+
 plt.xlabel('Color index')
 plt.ylabel('Absolute magnitude')
+
 plt.title('Hertzprung-Russel diagram')
-#save_figure('HRD', 2500)
+thread.start_new_thread(working_bar, ())
+save_figure('pics\HRD', 1000)
+work = False
+print('Done!')
 plt.show()
