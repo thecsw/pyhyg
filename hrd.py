@@ -19,6 +19,7 @@ def save_figure(cname, cdpi):
 def working_bar():
     global pbar
     i=0
+    pbar.start()
     for i in pbar((i for i in range(150))):
         time.sleep(.08)
         if work == False:
@@ -58,7 +59,8 @@ plt.ylabel('Absolute magnitude')
 
 plt.title('Hertzprung-Russel diagram')
 thread.start_new_thread(working_bar, ())
-save_figure('pics\HRD', 1000)
+save_figure('pics/HRD', 2500)
+pbar.finish()
 work = False
 print('Done!')
 plt.show()
