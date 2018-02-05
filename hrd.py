@@ -2,7 +2,6 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 import csv
 import math
-import thread
 import time
 ax = plt.gca()
 ax.set_facecolor('black')
