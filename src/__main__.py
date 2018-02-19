@@ -74,7 +74,7 @@ plt.ylabel('Absolute magnitude')
 
 plt.title('Hertzprung-Russel diagram')
 print('Saving the diagrams...')
-save_figure('pics/HRD', 2500)
+#save_figure('pics/HRD', 2500)
 print('Done!')
 
 
