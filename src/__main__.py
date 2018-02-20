@@ -4,7 +4,7 @@ import csv
 import math
 import time
 ax = plt.gca()
-ax.set_facecolor('black')
+#ax.set_facecolor('black')
 stars_abs_mag = []
 stars_color_index = []
 
@@ -39,7 +39,7 @@ with open('HYG-Database/hygdata_v3.csv', 'r') as file:
         counter += 1
 file.close()
 
-plt.scatter(stars_color_index, stars_abs_mag, s = 0.37, c = 'w')
+plt.scatter(stars_color_index, stars_abs_mag, s = 0.37)
 
 plt.annotate('Sun', xy = (stars_color_index[0], stars_abs_mag[0]))
 
