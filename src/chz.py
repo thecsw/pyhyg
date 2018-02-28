@@ -38,13 +38,13 @@ with open('HYG-Database/hygdata_v3.csv', 'r') as file:
     counter = 0
     added_values = 0
     for row in tqdm(cord):
-        if not counter == 0 and counter % 25 == 0 or counter == 1:
+        if not counter == 0 and counter % 1 == 0 or counter == 1:
             # We are skipping first row, as it is text title, not needed
             if not row[16] == '' and not row[15] == '': #If its empty, skip it
                 stars_abs_mag.append(float(row[14]))
                 stars_color_index.append(float(row[16]))
                 try:
-                    bcc = bc[row[15][0]]
+                    bcc = bc[row[15][0]] # the bolometric correction
                 except:
                     bcc = 0
                 try:
@@ -64,16 +64,14 @@ with open('HYG-Database/hygdata_v3.csv', 'r') as file:
                     print("oops")
                 added_values+=1
         counter += 1
+
 file.close()
 
-
-
-
-print ("\nOur sun: \n\
+print ("\nOur sun: \n\n\
 \tAbsolute magnitude : {}\n\
 \tColor index : {}\n".format(stars_abs_mag[0], stars_color_index[0]))
 
-print("Statistics :\n\
+print("Statistics :\n\n\
 \t Parsed stars : {} ({}%)\n\
 \t Main Sequence: {} ({}%)\n\
 \t Read Giants  : {} ({}%)\n\
@@ -91,32 +89,71 @@ print("Statistics :\n\
 ))
 
 lens = [[],[],[],[]]
-ris = [[],[],[],[]]
-ros = [[],[],[],[]]
+ris =  [[],[],[],[]]
+ros =  [[],[],[],[]]
 
 for i in range(4):
     for j in range(int(stars_types[i])):
         lens[i].append(chzl[i][j][1]-chzl[i][j][0])
         ris[i].append(chzl[i][j][0])
         ros[i].append(chzl[i][j][1])
-        
-print("Statistics Version 2.0\n\
-\t Average lengths of CHZ (AU):\n\
-\t\t White Dwarfs : {}\n\
-\t\t Main Sequence: {}\n\
-\t\t Red Dwarfs   : {}\n\
-\t\t Supergiants  : {}\n\
-\n\
-\t Average inner and outer CHZ lengths (AU):\n\
-\t\t White Dwarfs  : ri = {}, ro = {}\n\
-\t\t Main Sequence : ri = {}, ro = {}\n\
-\t\t Red Dwarfs    : ri = {}, ro = {}\n\
-\t\t Supergiants   : ri = {}, ro = {}\n".format(statistics.mean(lens[0]),
-                                               statistics.mean(lens[1]),
-                                               statistics.mean(lens[2]),
-                                               statistics.mean(lens[3]),
 
-                                               statistics.mean(ris[0]),statistics.mean(ros[0]),
-                                               statistics.mean(ris[1]),statistics.mean(ros[1]),
-                                               statistics.mean(ris[2]),statistics.mean(ros[2]),
-                                               statistics.mean(ris[3]),statistics.mean(ros[3])))
+round_number = 8
+        
+print("Statistics Version 2.0\n\n\
+\t Average lengths of CHZ (AU):\n\
+\t\t White Dwarfs : {} ± {} ({}%)\n\
+\t\t Main Sequence: {} ± {} ({}%) \n\
+\t\t Red Dwarfs   : {} ± {} ({}%)\n\
+\t\t Supergiants  : {} ± {} ({}%)\n\
+\n\
+\t Average inner and outer CHZ lengths (AU):\n\n\
+\t\t White Dwarfs  : ri = {} ± {} ({}%)\n\
+\t\t                 ro = {} ± {} ({}%)\n\
+\t\t Main Sequence : ri = {} ± {} ({}%)\n\
+\t\t                 ro = {} ± {} ({}%)\n\
+\t\t Red Dwarfs    : ri = {} ± {} ({}%)\n\
+\t\t                 ro = {} ± {} ({}%)\n\
+\t\t Supergiants   : ri = {} ± {} ({}%)\n\
+\t\t                 ro = {} ± {} ({}%)\n".format(round(statistics.mean(lens[0]), round_number), round(statistics.stdev(lens[0]), round_number),
+                                    round(round(statistics.stdev(lens[0]), round_number) * 100 / round(statistics.mean(lens[0]), round_number), 2),
+                                                  
+                                                 round(statistics.mean(lens[1]), round_number), round(statistics.stdev(lens[1]), round_number),
+                                    round(round(statistics.stdev(lens[1]), round_number) * 100 / round(statistics.mean(lens[1]), round_number), 2),
+                                    
+                                                 round(statistics.mean(lens[2]), round_number), round(statistics.stdev(lens[2]), round_number),
+                                    round(round(statistics.stdev(lens[2]), round_number) * 100 / round(statistics.mean(lens[2]), round_number), 2),
+                                    
+                                                 round(statistics.mean(lens[3]), round_number), round(statistics.stdev(lens[3]), round_number),
+                                    round(round(statistics.stdev(lens[3]), round_number) * 100 / round(statistics.mean(lens[3]), round_number), 2),
+
+
+                                                  
+                                                 round(statistics.mean(ris[0]), round_number), round(statistics.stdev(ris[0]), round_number),
+                                    round(round(statistics.stdev(ris[0]), round_number) * 100 / round(statistics.mean(ris[0]), round_number), 2),
+
+                                                 round(statistics.mean(ros[0]), round_number), round(statistics.stdev(ros[0]), round_number),
+                                    round(round(statistics.stdev(ros[0]), round_number) * 100 / round(statistics.mean(ros[0]), round_number), 2),
+
+                                                 round(statistics.mean(ris[1]), round_number), round(statistics.stdev(ris[1]), round_number),
+                                    round(round(statistics.stdev(ris[1]), round_number) * 100 / round(statistics.mean(ris[1]), round_number), 2),
+                                                 
+                                                 round(statistics.mean(ros[1]), round_number), round(statistics.stdev(ros[1]), round_number),
+                                    round(round(statistics.stdev(ros[1]), round_number) * 100 / round(statistics.mean(ros[1]), round_number), 2),
+                                                 
+                                                 round(statistics.mean(ris[2]), round_number), round(statistics.stdev(ris[2]), round_number),
+                                    round(round(statistics.stdev(ris[2]), round_number) * 100 / round(statistics.mean(ris[2]), round_number), 2),
+                                                 
+                                                 round(statistics.mean(ros[2]), round_number), round(statistics.stdev(ros[2]), round_number),
+                                    round(round(statistics.stdev(ros[2]), round_number) * 100 / round(statistics.mean(ros[2]), round_number), 2),
+                                                 
+                                                 round(statistics.mean(ris[3]), round_number), round(statistics.stdev(ris[3]), round_number),
+                                    round(round(statistics.stdev(ris[3]), round_number) * 100 / round(statistics.mean(ris[3]), round_number), 2),
+                                                 
+                                                 round(statistics.mean(ros[3]), round_number), round(statistics.stdev(ros[3]), round_number),
+                                    round(round(statistics.stdev(ros[3]), round_number) * 100 / round(statistics.mean(ros[3]), round_number), 2),
+))
+
+print("Please note that the absolute error is big due to a very large amount of data and this data is very spread out.\n\
+Some values are very small and some values are very big, which makes the data not accurate.\n\
+Thank you.\n")

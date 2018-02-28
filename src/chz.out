@@ -1,0 +1,47 @@
+ 
+thecsw@lenna ~/docs/gits/pyhyg/src                                                                                                         [21:42:49] 
+> $ python chz.py
+python chz.py
+Extracting stars' data from the database...
+0it [00:00, ?it/s]oops
+119615it [00:04, 29893.75it/s]
+
+Our sun: 
+
+	Absolute magnitude : 4.85
+	Color index : 0.656
+
+Statistics :
+
+	 Parsed stars : 115365 (100.0%)
+	 Main Sequence: 67538.0 (58.54%)
+	 Read Giants  : 38144.0 (33.06%)
+	 White Dwarfs : 143.0 (0.12%)
+	 Super Giants : 9539.0 (8.27%)
+
+Statistics Version 2.0
+
+	 Average lengths of CHZ (AU):
+		 White Dwarfs : 0.01105518 ± 0.00952393 (86.15%)
+		 Main Sequence: 2.85476764 ± 5.57634605 (195.33%) 
+		 Red Dwarfs   : 4.13288766 ± 3.38561529 (81.92%)
+		 Supergiants  : 1253.47818018 ± 1401.85413846 (111.84%)
+
+	 Average inner and outer CHZ lengths (AU):
+
+		 White Dwarfs  : ri = 0.02508835 ± 0.02161337 (86.15%)
+		                 ro = 0.03614353 ± 0.0311373 (86.15%)
+		 Main Sequence : ri = 6.47854139 ± 12.65482636 (195.33%)
+		                 ro = 9.33330903 ± 18.23117241 (195.33%)
+		 Red Dwarfs    : ri = 9.3790764 ± 7.68323435 (81.92%)
+		                 ro = 13.51196405 ± 11.06884964 (81.92%)
+		 Supergiants   : ri = 2844.61340144 ± 3181.33425231 (111.84%)
+		                 ro = 4098.09158162 ± 4583.18839078 (111.84%)
+
+Please note that the absolute error is big due to a very large amount of data and this data is very spread out.
+Some values are very small and some values are very big, which makes the data not accurate.
+Thank you.
+
+ 
+thecsw@lenna ~/docs/gits/pyhyg/src                                                                                                        [21:43:16] 
+> $ 
