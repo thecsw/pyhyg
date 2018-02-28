@@ -30,9 +30,10 @@ with open('HYG-Database/hygdata_v3.csv', 'r') as file:
                 stars_color_index.append(float(row[16]))
                 names.append(row[6])
                 code.append(row[4])
-                print(row[4])
-                print(row[13])
-                print(row[9])
+                print("ID -> {} Abs. Mag -> {} Luminosity/solar -> {}".format(row[4], row[14], row[33]))
+                #print(row[4])
+                #print(row[13])
+                #print(row[9])
         counter += 1
 file.close()
 
