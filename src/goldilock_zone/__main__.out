@@ -1,10 +1,10 @@
  
-thecsw@lenna ~/docs/gits/pyhyg/src                                                                                                         [21:42:49] 
-> $ python chz.py
-python chz.py
+thecsw@lenna ~/dcs/gits/pyhyg/src/goldilock_zone                [18:40:59] 
+> $ python __main__.py
+python __main__.py
 Extracting stars' data from the database...
 0it [00:00, ?it/s]oops
-119615it [00:04, 29893.75it/s]
+119615it [00:05, 21408.75it/s]
 
 Our sun: 
 
@@ -41,7 +41,3 @@ Statistics Version 2.0
 Please note that the absolute error is big due to a very large amount of data and this data is very spread out.
 Some values are very small and some values are very big, which makes the data not accurate.
 Thank you.
-
- 
-thecsw@lenna ~/docs/gits/pyhyg/src                                                                                                        [21:43:16] 
-> $ 
