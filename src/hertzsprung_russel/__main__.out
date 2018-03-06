@@ -1,0 +1,21 @@
+ 
+thecsw@lenna ~/dcs/gits/pyhyg/src/hertzsprung_russel           [18:37:13] 
+> $ python __main__.py
+python __main__.py
+Extracting stars' data from the database...
+119615it [00:01, 61986.81it/s]
+
+Our sun: 
+	Absolute magnitude : 4.85
+	Color index : 0.656
+
+Statistics :
+	 Parsed stars : 4715 (100.0%)
+	 Main Sequence: 2744.0 (58.2%)
+	 Read Giants  : 1551.0 (32.9%)
+	 White Dwarfs : 6.0 (0.13%)
+	 Super Giants : 414.0 (8.78%)
+
+Saving the diagrams...
+Done!
+

@@ -17,7 +17,7 @@ def save_figure(cname, cdpi):
 
 print("Extracting stars' data from the database...")
 
-with open('HYG-Database/hygdata_v3.csv', 'r') as file:
+with open('../HYG-Database/hygdata_v3.csv', 'r') as file:
     cord = csv.reader(file)
     counter = 0
     added_values = 0
