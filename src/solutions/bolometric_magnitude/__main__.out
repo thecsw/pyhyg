@@ -1,0 +1,13 @@
+ 
+thecsw@lenna ~/dcs/gits/pyhyg/src/solutions/bolometric_magnitude  [18:55:17] 
+> $ python __main__.py
+python __main__.py
+Glis ID & Bolometric Magnitude (3sf)
+551 & 13.147\\
+623 & 8.879\\
+482A & 2.342\\
+231 & 4.967\\
+286 & 0.884\\
+841 & 8.143\\
+35 & 14.222\\
+440 & 13.182\\
