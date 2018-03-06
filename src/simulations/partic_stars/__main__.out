@@ -1,0 +1,16 @@
+ 
+thecsw@lenna ~/dcs/gits/pyhyg/src/simulations/partic_stars      [18:53:17] 
+> $ python __main__.py
+python __main__.py
+Extracting stars' data from the database...
+0it [00:00, ?it/s]ID -> Gl 35 Abs. Mag -> 14.222 Luminosity/solar -> 0.00017831997722329162
+26992it [00:00, 53976.28it/s]ID -> Gl 231 Abs. Mag -> 5.037 Luminosity/solar -> 0.8417827076608124
+32211it [00:00, 53677.33it/s]ID -> Gl 286 Abs. Mag -> 1.084 Luminosity/solar -> 32.09223768048434
+55672it [00:01, 55663.60it/s]ID -> Gl 440 Abs. Mag -> 13.182 Luminosity/solar -> 0.00046472924167620307
+61354it [00:01, 55709.86it/s]ID -> Gl 482A Abs. Mag -> 2.402 Luminosity/solar -> 9.532350439205146
+67016it [00:01, 55027.31it/s]ID -> Gl 551 Abs. Mag -> 15.447 Luminosity/solar -> 0.00005770321353329293
+78173it [00:01, 55022.74it/s]ID -> Gl 623 Abs. Mag -> 10.739 Luminosity/solar -> 0.0044096081645063736
+103506it [00:01, 56846.54it/s]ID -> Gl 841A Abs. Mag -> 9.343 Luminosity/solar -> 0.015951443869276015
+119615it [00:02, 57299.79it/s]
+Saving the diagrams...
+Done!
